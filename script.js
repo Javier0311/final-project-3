@@ -1,0 +1,39 @@
+// Main Menu //
+
+const creditsButton = document.getElementById('open-credits');
+const settingsButton = document.getElementById('open-options');
+const settingsButtonSection = document.querySelector('.options-section');
+const creditsSection = document.querySelector('.credits-section');
+const closeCreditsButton = document.querySelector('.credits-section .close-credits');
+const closeSettingsButton = document.querySelector('.options-section .close-credits');
+
+
+// Credits & Lore Section //
+
+creditsButton.addEventListener('click', () => {
+    creditsSection.classList.add('visible', 'animate__animated', 'animate__fadeIn');
+    creditsSection.style.display = 'block';
+})
+
+closeCreditsButton.addEventListener('click', () => {
+    creditsSection.classList.remove('animate__fadeIn');
+    creditsSection.classList.add('animate__animated', 'animate__fadeOut');
+    setTimeout(() => {
+        creditsSection.classList.remove('animate__fadeOut', 'animate__animated', 'visible');
+        creditsSection.style.display = 'none';
+    }, 1000); // Assuming 1s animation duration
+})
+
+settingsButton.addEventListener('click', () => {
+    settingsButtonSection.classList.add('visible', 'animate__animated', 'animate__fadeIn');
+    settingsButtonSection.style.display = 'block';
+})
+
+closeSettingsButton.addEventListener('click', () => {
+    settingsButtonSection.classList.remove('animate__fadeIn');
+    settingsButtonSection.classList.add('animate__animated', 'animate__fadeOut');
+    setTimeout(() => {
+        settingsButtonSection.classList.remove('animate__fadeOut', 'animate__animated', 'visible');
+        settingsButtonSection.style.display = 'none';
+    }, 1000); // Assuming 1s animation duration
+})
