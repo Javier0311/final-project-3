@@ -162,3 +162,31 @@ main{
     align-items: center;
     font-size: 1.7rem;
 }
+
+/* Effects */
+
+@keyframes opacityFadeOut{
+    0% {
+        filter: brightness(0.7);
+        scale: 1;
+    }
+
+    100% {
+        filter: brightness(1);
+        scale: 1.15;
+    }
+}
+
+.effect{
+    animation: opacityFadeOut;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+}
+
+.BoardGame{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: -10;
+}

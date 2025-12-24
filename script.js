@@ -37,3 +37,16 @@ closeSettingsButton.addEventListener('click', () => {
         settingsButtonSection.style.display = 'none';
     }, 1000); // Assuming 1s animation duration
 })
+
+// Start Game Button //
+
+const startGameButton = document.getElementById('start-game');
+const mainMenu = document.querySelector('.main-menu');
+const imgBack = document.querySelector('.img-back');
+
+startGameButton.addEventListener('click', () => {
+    mainMenu.classList.remove('animate__fadeIn');
+    mainMenu.classList.add('animate__animated', 'animate__fadeOut');
+    imgBack.classList.add('effect');
+    mainMenu.style.display = 'none';
+});
