@@ -44,9 +44,17 @@ const startGameButton = document.getElementById('start-game');
 const mainMenu = document.querySelector('.main-menu');
 const imgBack = document.querySelector('.img-back');
 
+const interactOn = document.querySelectorAll('.on-interact');
+
 startGameButton.addEventListener('click', () => {
     mainMenu.classList.remove('animate__fadeIn');
     mainMenu.classList.add('animate__animated', 'animate__fadeOut');
     imgBack.classList.add('effect');
     mainMenu.style.display = 'none';
+
+    setTimeout(() => {
+        interactOn.forEach(element => {
+            element.style.display = 'block';
+        });
+    }, 1000); // Assuming 1s animation duration
 });
