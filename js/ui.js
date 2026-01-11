@@ -45,6 +45,9 @@ const mainMenu = document.querySelector('.main-menu');
 const imgBack = document.querySelector('.img-back');
 
 const interactOn = document.querySelectorAll('.on-interact');
+const goldContainer = document.querySelector('.gold-container');
+const bookContainer = document.querySelector('.book-container');
+const consoleLog = document.querySelector('.console-log')
 
 startGameButton.addEventListener('click', () => {
     mainMenu.classList.remove('animate__fadeIn');
@@ -57,4 +60,24 @@ startGameButton.addEventListener('click', () => {
             element.style.display = 'block';
         });
     }, 1000); // Assuming 1s animation duration
+
+    setTimeout(() => {
+        goldContainer.style.display = 'flex';
+        bookContainer.style.display = 'flex';
+        consoleLog.style.display = 'flex'
+
+    }, 2000);
 });
+
+// Getting data from Server
+
+const idGold = document.getElementById('goldplay');
+
+export function updateGold(amount){
+    if (idGold) {
+        idGold.textContent = amount;
+
+    } else {
+        console.error("UI Error: Element .goldplay not found!");
+    }
+};

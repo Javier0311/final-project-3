@@ -62,7 +62,7 @@ main{
 
     animation: pulse 3s ease-in-out infinite;
 
-    background-image: url(/images/background-buttons.webp);
+    background-image: url(./images/background-buttons.webp);
     background-position: center;
 }
 
@@ -335,6 +335,7 @@ main{
     height: 400px;
     display: flex;
     flex-direction: column;
+    z-index: 2;
 
     display: none;
 }
