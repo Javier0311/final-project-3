@@ -81,3 +81,189 @@ export function updateGold(amount){
         console.error("UI Error: Element .goldplay not found!");
     }
 };
+
+// Cities Information
+
+const whispering = document.getElementById("whispering-city");
+const aethelgard = document.getElementById("aethelgard-city");
+const oakhaven = document.getElementById("oakhaven-city");
+const serpent = document.getElementById("serpent-city");
+const ember = document.getElementById("ember-city");
+
+const cityCanvas = document.querySelector('.city-canvas');
+
+const idCity = document.getElementById('idCity');
+const idPopulation = document.getElementById('idPopulation');
+const idEconomy = document.getElementById('idEconomy');
+const idDescription = document.getElementById('idDescription');
+
+const closeCanvas = document.getElementById('closeCanvas');
+
+function showCardCity (citySelect) {
+    idCity.textContent = citySelect.name;
+    idPopulation.textContent = citySelect.population;
+    idEconomy.textContent = citySelect.economyType;
+    idDescription.textContent = citySelect.description;
+
+    cityCanvas.style.display = 'block';
+}
+
+closeCanvas.addEventListener('click', () => {
+    cityCanvas.style.display = 'none';
+});
+
+export function citiesInformation (listCities) {
+    
+    // Oakhaven
+    oakhaven.addEventListener('click', () => {
+        
+        const cityFound = listCities.find(c => c.id === 'oakhaven');
+
+        if (cityFound){
+            console.log('City Found:', cityFound);
+            showCardCity(cityFound);
+        }
+    });
+
+    // The Whispering Woods
+
+    whispering.addEventListener('click', () => {
+        
+        const cityFound = listCities.find(c => c.id === 'whispering');
+
+        if (cityFound){
+            console.log('City Found:', cityFound);
+            showCardCity(cityFound);
+        }
+    });
+
+    // The Serpent Isles
+
+    serpent.addEventListener('click', () => {
+        
+        const cityFound = listCities.find(c => c.id === 'serpent');
+
+        if (cityFound){
+            console.log('City Found:', cityFound);
+            showCardCity(cityFound);
+        }
+    });
+
+    // Aethelgard
+
+    aethelgard.addEventListener('click', () => {
+        
+        const cityFound = listCities.find(c => c.id === 'aethelgard');
+
+        if (cityFound){
+            console.log('City Found:', cityFound);
+            showCardCity(cityFound);
+        }
+    });
+
+    // Ember Cay
+
+    ember.addEventListener('click', () => {
+        
+        const cityFound = listCities.find(c => c.id === 'ember');
+
+        if (cityFound){
+            console.log('City Found:', cityFound);
+            showCardCity(cityFound);
+        }
+    });
+
+}
+
+// Ledger Section
+
+const inventoryBtn = document.querySelector('.inventory-container');
+const merchantsBtn = document.querySelector('.mercader-container');
+
+const containerResources = document.querySelector('.container-resources');
+const containerMerchants = document.querySelector('.second-part');
+const activeBtn = document.querySelector('.activeBtn');
+
+inventoryBtn.addEventListener('click', () => {
+    containerResources.style.display = 'flex';
+    inventoryBtn.classList.add('activeBtn');
+
+    containerMerchants.style.display = 'none';
+    merchantsBtn.classList.remove('activeBtn');
+});
+
+merchantsBtn.addEventListener('click', () => {
+    containerMerchants.style.display = 'flex';
+    merchantsBtn.classList.add('activeBtn');
+
+    containerResources.style.display = 'none';
+    inventoryBtn.classList.remove('activeBtn');
+});
+
+// Get Information about Inventory
+
+const woodStock = document.getElementById('woodStock');
+const ironStock = document.getElementById('ironStock');
+const wheatStock = document.getElementById('wheatStock');
+const stoneStock = document.getElementById('stoneStock');
+const spicesStock = document.getElementById('spicesStock');
+const gemStock = document.getElementById('gemStock');
+
+export function inventoryData(stock){
+    inventoryBtn.addEventListener('click', () => {
+        woodStock.textContent = stock.wood;
+        ironStock.textContent = stock.iron;
+        wheatStock.textContent = stock.wheat;
+        stoneStock.textContent = stock.stone;
+        spicesStock.textContent = stock.spices;
+        gemStock.textContent = stock.gems;
+
+    });
+}
+
+// Merchants
+
+const buyMerchants = document.querySelector(".button-buy");
+const containerCardMerchants = document.querySelector('.container-cardmerchants');
+
+export function configurarBotonContratar(mainConnect) {
+    if (buyMerchants) {
+       
+        const newBtn = buyMerchants.cloneNode(true);
+        buyMerchants.parentNode.replaceChild(newBtn, buyMerchants);
+        
+        // Cuando hagan click, ejecutamos la función que nos mandó main.js
+        newBtn.addEventListener('click', () => {
+            console.log("Click en contratar detectado en UI...");
+            mainConnect(); 
+        });
+    }
+}
+
+export function seeMerchantHire(checkHire) {
+
+    if (containerCardMerchants) {
+        containerCardMerchants.innerHTML = '';
+
+        const hiredMerchants = checkHire.filter(m => m.hire === true);
+
+        hiredMerchants.forEach(merchant => {
+
+            const card = document.createElement('div');
+            card.className = 'merchant-card';
+
+            card.innerHTML = `
+                <div class="card-header">
+                    <strong>${merchant.name}</strong>
+            `;
+
+            containerCardMerchants.appendChild(card);
+        });
+
+        if (hiredMerchants.length === 0) {
+            containerCardMerchants.innerHTML = '<p class="empty-msg">No tienes mercaderes activos.</p>';
+        }
+    
+    }
+   
+};

@@ -374,6 +374,15 @@ main{
     cursor: pointer;
 }
 
+.inventory-container:hover,
+.mercader-container:hover{
+    background-color: rgba(227, 218, 218, 0.471)
+} 
+
+.activeBtn{
+    background-color: rgba(227, 218, 218, 0.471);
+}
+
 
 .container-resources{
     align-self: center;
@@ -384,6 +393,7 @@ main{
     border: 1px solid black;
     border-radius: 2px;
     width: 260px;
+
 }
 
 .resour-div{
@@ -400,6 +410,8 @@ main{
     padding-top: 5px;
     display: flex;
     flex-direction: column;
+
+    display: none;
 }
 
 .merchant-guild{
@@ -564,3 +576,27 @@ main{
     width: 100%;
 }
 
+.city-canvas{
+    position: absolute;
+    top: 30%;
+    left: 40%;
+    background-color: #473021;
+    border: 0.5px white solid;
+    padding: 2px;
+    color: white;
+    z-index: 19;
+
+    display: none;
+
+}
+
+#closeCanvas{
+    display: flex;
+    justify-content: end;
+}
+
+#closeCanvas svg{
+    width: 24px;
+    cursor: pointer;
+    fill: white;
+}

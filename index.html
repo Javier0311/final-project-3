@@ -65,19 +65,26 @@
 
     <div class="on-interact">
 
-        <div class="">
-
+        <div class="city-canvas">
+            <div id="closeCanvas"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d="M183.1 137.4C170.6 124.9 150.3 124.9 137.8 137.4C125.3 149.9 125.3 170.2 137.8 182.7L275.2 320L137.9 457.4C125.4 469.9 125.4 490.2 137.9 502.7C150.4 515.2 170.7 515.2 183.2 502.7L320.5 365.3L457.9 502.6C470.4 515.1 490.7 515.1 503.2 502.6C515.7 490.1 515.7 469.8 503.2 457.3L365.8 320L503.1 182.6C515.6 170.1 515.6 149.8 503.1 137.3C490.6 124.8 470.3 124.8 457.8 137.3L320.5 274.7L183.1 137.4z"/></svg></div>
+            <p>City: <span id="idCity"></span></p>
+            <p>Population: <span id="idPopulation"></span></p>
+            <p>Economy: <span id="idEconomy"></span></p>
+            <p>Description: <span id="idDescription"></span></p>
+            <hr>
+            <p>Goods: Selling <span id="idResourceBuy">Wood</span> <span id="idPriceSell">(15g)</span></p>
+            <p>Buying: <span id="idResourceGet">Steel</span> <span id="idPriceBuy">(45g)</span></p>
         </div>
 
-        <div class="whispering"></div>
+        <div class="whispering" id="whispering-city"></div>
 
-        <div class="aethelgard"></div>
+        <div class="aethelgard" id="aethelgard-city"></div>
 
-        <div class="oakhaven"></div>
+        <div class="oakhaven" id="oakhaven-city"></div>
 
-        <div class="serpent"></div>
+        <div class="serpent" id="serpent-city"></div>
 
-        <div class="ember"></div>
+        <div class="ember" id="ember-city"></div>
 
 
     </div>
@@ -104,7 +111,7 @@
         </div>
         <div class="first-part">
             <div class="mix-togle">
-                <div class="inventory-container">
+                <div class="inventory-container activeBtn">
                     INVENTORY
                 </div>
 
@@ -115,13 +122,22 @@
 
             <div class="container-resources">
                 <div class="resour-div">
-                    <span><img src="./images/wood.png" alt="wood Icon"></span><p>WOOD: <span>0</span></p>
+                    <span><img src="./images/wood.png" alt="wood Icon"></span><p>WOOD: <span id="woodStock">0</span></p>
                 </div>
                 <div class="resour-div">
-                    <span><img src="./images/pig-iron.png" alt="iron Icon"></span><p>IRON: <span>0</span></p>
+                    <span><img src="./images/pig-iron.png" alt="iron Icon"></span><p>IRON: <span id="ironStock">0</span></p>
                 </div>
                 <div class="resour-div">
-                    <span><img src="./images/wheat.png" alt="wheat Icon"></span><p>WHEAT: <span>0</span></p>
+                    <span><img src="./images/wheat.png" alt="wheat Icon"></span><p>WHEAT: <span id="wheatStock">0</span></p>
+                </div>
+                <div class="resour-div">
+                    <span><img src="./images/granite.png" alt="granite Icon"></span><p>STONE: <span id="stoneStock">0</span></p>
+                </div>
+                <div class="resour-div">
+                    <span><img src="./images/spices.png" alt="spices Icon"></span><p>SPICES: <span id="spicesStock">0</span></p>
+                </div>
+                <div class="resour-div">
+                    <span><img src="./images/gem.png" alt="gem Icon"></span><p>GEM: <span id="gemStock">0</span></p>
                 </div>
 
             </div>
@@ -138,11 +154,7 @@
                 </div>
 
                 <div class="container-cardmerchants">
-                    <div class="profile-card">
-                        <img src="#" alt="Profile">
-
-                        <p>Capitan Borin</p>
-                    </div>
+                    
                 </div>
             </div>
 
