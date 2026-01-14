@@ -163,7 +163,7 @@
     </div>
 
     <div class="console-log">
-        <img class="back-fix" src="#" alt="background console">
+        <!-- <img class="back-fix" src="#" alt="background console"> -->
         <div class="command-h2">
             <img src="./images/console.log-back.png" alt="Background Console">
             <h2>COMMAND CONSOLE</h2>
@@ -174,8 +174,8 @@
                 <img src="./images/darker-back.webp" alt="Background dark">
                 <h3>ACTIONS</h3>
                 <hr>
-                <div>[ LOAD WAGON ]</div>
-                <div>[ DISPATCH ]</div>
+                <div id="showLoad">[ LOAD WAGON ]</div>
+                <div id="showDispatch">[ DISPATCH ]</div>
             </div>
 
             <div class="travel-section">
@@ -192,6 +192,118 @@
                     <input type="text" placeholder="Send a comand.">
                 </div>
             </div>
+        </div>
+
+    </div>
+
+    <div class="load-container-back">
+        <div class="load-container">
+            <div class="close-load-container" id="closeLoadContainer"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d="M183.1 137.4C170.6 124.9 150.3 124.9 137.8 137.4C125.3 149.9 125.3 170.2 137.8 182.7L275.2 320L137.9 457.4C125.4 469.9 125.4 490.2 137.9 502.7C150.4 515.2 170.7 515.2 183.2 502.7L320.5 365.3L457.9 502.6C470.4 515.1 490.7 515.1 503.2 502.6C515.7 490.1 515.7 469.8 503.2 457.3L365.8 320L503.1 182.6C515.6 170.1 515.6 149.8 503.1 137.3C490.6 124.8 470.3 124.8 457.8 137.3L320.5 274.7L183.1 137.4z"/></svg></div>
+            <div class="h2-merchant"><h2>Merchants Available</h2></div>
+            <div class="box-merchant">
+                <div class="container-each-merchant">
+                    <img src="./images/mercader1.webp" alt="Garrick Thorne">
+                    <div class="data-merchant">
+                        <p>Name: <span>Garrick Thorne</span></p>
+                        <p>Location: <span>Oakhaven</span></p>
+                        <p>Status: <span>Hire</span></p>
+                    </div>
+                </div>
+
+                <div class="loadMerchader">
+                    Load
+                </div>
+            </div>
+
+            <div class="box-merchant">
+                <div class="container-each-merchant">
+                    <img src="./images/mercader2.webp" alt="Lyra Vane">
+                    <div class="data-merchant">
+                        <p>Name: <span>Lyra Vane</span></p>
+                        <p>Location: <span>Oakhaven</span></p>
+                        <p>Status: <span>No Hire</span></p>
+                    </div>
+                </div>
+
+                <div class="loadMerchader">
+                    Load
+                </div>
+            </div>
+
+            <div class="box-merchant">
+                <div class="container-each-merchant">
+                    <img src="./images/mercader3.webp" alt="Tony Vander">
+                    <div class="data-merchant">
+                        <p>Name: <span>Tony Vander</span></p>
+                        <p>Location: <span>Oakhaven</span></p>
+                        <p>Status: <span>No Hire</span></p>
+                    </div>
+                </div>
+
+                <div class="loadMerchader">
+                    Load
+                </div>
+            </div> 
+        </div>
+    </div>
+
+    <div class="dispatch-container-back">
+
+        <div class="dispatch-container">
+            
+            <div class="close-load-container" id="closeDispatchContainer">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path d="M183.1 137.4C170.6 124.9 150.3 124.9 137.8 137.4C125.3 149.9 125.3 170.2 137.8 182.7L275.2 320L137.9 457.4C125.4 469.9 125.4 490.2 137.9 502.7C150.4 515.2 170.7 515.2 183.2 502.7L320.5 365.3L457.9 502.6C470.4 515.1 490.7 515.1 503.2 502.6C515.7 490.1 515.7 469.8 503.2 457.3L365.8 320L503.1 182.6C515.6 170.1 515.6 149.8 503.1 137.3C490.6 124.8 470.3 124.8 457.8 137.3L320.5 274.7L183.1 137.4z"/></svg>
+            </div>
+
+            <div class="dispatch-first"> 
+                <div class="h2-merchant"><h2>Dispatch Merchants</h2></div>
+                <div id="dispatch-list-container">
+                    </div>
+            </div>
+
+            <div class="travel-section-dis" id="idTravelSection" style="display: none;">
+                <div class="h2-travel-dis"><h2>Travel Plan</h2></div>
+
+                <div class="container-fromto">
+                    <div class="div-from">
+                        <p>FROM</p>
+                        <span>Origin</span>
+                    </div>
+
+                    <div class="fromto-img">
+                        <img src="./images/right-arrow.png" alt="right Arrow">
+                    </div>
+
+                    <div class="div-to">
+                        <p>TO</p>
+                        <span>Target</span>
+                    </div>
+                </div>
+
+                <div class="container-details">
+                    <p>Distance: <span>0</span> km</p>
+                    <p>Risk Level: <span>0%</span></p>
+                    <p>Est. Time: <span>0</span> sec</p>
+                </div>
+
+                <div class="btn-section">
+                    <div class="confirm-btn" id="confirmTravel">CONFIRM TRAVEL</div>
+                    <div class="cancel-Btn" id="cancelTravel">CANCEL</div>
+                </div>
+            </div>
+
+        </div> </div>
+
+    <div id="game-over-modal" class="modal-overlay">
+        <div class="modal-content game-over-box">
+            <h2 class="game-over-title">☠️ BANKRUPTCY ☠️</h2>
+            <p>Your guild has fallen into ruin.</p>
+            <p class="reason-text" id="game-over-reason">You have run out of gold and resources.</p>
+            <div class="game-over-stats">
+                <p>Final gold: <span id="go-gold">0</span></p>
+                <p>Active merchants: <span id="go-merchants">0</span></p>
+            </div>
+            <button id="restart-btn" class="btn-restart">Try Again</button>
         </div>
     </div>
 

@@ -328,7 +328,7 @@ main{
 .book-container{
     position: absolute;
     top: 20%;
-    left: 2%;
+    left: -1%;
     /* background-color: white; */
     overflow: hidden;
     width: 350px;
@@ -426,6 +426,7 @@ main{
     border: 1px solid black;
     padding: 10px 5px;
     width: fit-content;
+
 }
 
 .button-buy{
@@ -438,8 +439,40 @@ main{
     cursor: pointer;
 }
 
-.container-cardmerchants{
+/* --- LISTA DE MERCADERES (CON SCROLL) --- */
+.container-cardmerchants {
     align-self: center;
+    width: 100%; /* Usar todo el ancho disponible */
+    
+    /* Altura máxima calculada para que no se salga del libro (400px alto total) */
+    max-height: 160px; 
+    
+    /* Esto activa el deslizamiento */
+    overflow-y: auto; 
+    
+    /* Espaciado interno para que no se corte el contenido */
+    padding: 5px;
+    margin-top: 10px;
+
+    /* Estilo de la barra de scroll (Firefox) */
+    scrollbar-width: thin;
+    scrollbar-color: #473021 rgba(0,0,0,0.1);
+}
+
+/* Estilo de la barra de scroll (Chrome, Edge, Safari) */
+.container-cardmerchants::-webkit-scrollbar {
+    width: 8px;
+}
+
+.container-cardmerchants::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.1);
+    border-radius: 4px;
+}
+
+.container-cardmerchants::-webkit-scrollbar-thumb {
+    background-color: #473021; /* Color marrón oscuro del tema */
+    border-radius: 4px;
+    border: 1px solid #e3cc9f; /* Borde clarito para resaltar */
 }
 
 .profile-card{
@@ -565,6 +598,7 @@ main{
     width: 100%;
     height: 130px;
     background-color: rgba(203, 178, 178, 0.315);
+    overflow-y: scroll;
 }
 
 .container-command{
@@ -576,10 +610,190 @@ main{
     width: 100%;
 }
 
+.load-container-back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    background-color: rgba(0, 0, 0, 0.301);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+
+    display: none;
+}
+
+.load-container{
+    position: absolute;
+    background-color: #4e3226;
+    width: 650px;
+    height: 550px;
+    top: 20%;
+    left: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 15px;
+
+}
+
+.h2-merchant{
+    align-self: center;
+    background-color: #e3cc9f;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+.close-load-container{
+    position: absolute;
+    width: 32px;
+    right: 3px;
+    top: 3px;
+    cursor: pointer;
+    fill: #e3cc9f;
+}
+
+.container-each-merchant{
+    width: 450px;
+    height: 130px;
+    background-color: #e3cc9f;
+    border-radius: 50px;
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    gap: 20px;
+}
+
+.container-each-merchant img{
+    width: 120px;
+}
+
+/* .data-merchant{
+    color: white;
+} */
+
+.box-merchant{
+    display: flex;
+    gap: 20px;
+}
+
+.loadMerchader{
+    align-self: center;
+    justify-self: center;
+    width: 120px;
+    height: 80px;
+    background-color: #e3cc9f;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.dispatch-container-back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    background-color: rgba(0, 0, 0, 0.301);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+
+    display: none;
+}
+
+#dispatch-list-container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.dispatch-container{
+    position: absolute;
+    background-color: #4e3226;
+    width: 650px;
+    height: 550px;
+    top: 20%;
+    left: 30%;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.dispatch-first{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.travel-section-dis{
+    /* display: flex; */
+    flex-direction: column;
+    gap: 20px;
+
+    display: none;
+}
+
+.h2-travel-dis{
+    background-color: #e3cc9f;
+    padding: 5px 30px;
+    align-self: center;
+    border-radius: 20px;
+}
+
+.container-fromto{
+    background-color: #e3cc9f;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    height: 150px;
+    text-align: center;
+}
+
+.container-details{
+    background-color: #e3cc9f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 130px;
+}
+
+.btn-section{
+    display: flex;
+    background-color: #e3cc9f;
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
+
+.confirm-btn,
+.cancel-Btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    width: 180px;
+    height: 40px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.confirm-btn{
+    background-color: rgb(2, 89, 2);
+}
+
+.cancel-Btn{
+    background-color: rgb(151, 24, 24);
+}
+
 .city-canvas{
     position: absolute;
     top: 30%;
     left: 40%;
+    width: 400px;
+    height: auto;
     background-color: #473021;
     border: 0.5px white solid;
     padding: 2px;
@@ -599,4 +813,188 @@ main{
     width: 24px;
     cursor: pointer;
     fill: white;
+}
+
+/* --- BARRA DE PROGRESO DE VIAJE --- */
+.travel-status-container {
+    margin-top: 5px;
+    width: 100%;
+    background-color: #2a1a11;
+    border-radius: 4px;
+    padding: 2px;
+    overflow: hidden; /* Evita que la barra se salga */
+}
+
+.progress-bar-bg {
+    width: 100%;
+    height: 6px;
+    background-color: #5a4030;
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Animación de carga infinita (tipo scanner) */
+.progress-bar-fill {
+    height: 100%;
+    width: 0%;
+    background-color: #f39c12;
+    border-radius: 3px;
+    position: absolute;
+    left: 0%;
+    animation: travelMove 1.5s infinite ease-in-out;
+}
+
+@keyframes travelMove {
+    0% { width: 0%; }
+    50% { width: 100%; }
+    100% { width: 0%; }
+}
+
+.time-left-text {
+    font-size: 0.75rem;
+    color: #e3cc9f;
+    text-align: center;
+    margin-top: 2px;
+    font-weight: bold;
+}
+
+/* --- TARJETA DE MERCADER (FLEXIBLE) --- */
+.merchant-card {
+    border: 1px solid #473021;
+    padding: 10px;
+    margin-bottom: 8px; /* Separación entre tarjetas */
+    border-radius: 5px;
+    background-color: rgba(78, 50, 38, 0.9); /* Un poco más oscuro para leer mejor */
+    
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: white; /* Asegurar que el texto se vea */
+
+    /* ESTO ES LO IMPORTANTE PARA QUE NO SE SALGA: */
+    height: auto; 
+    min-height: fit-content;
+    width: 100%; /* Ocupar todo el ancho disponible */
+    flex-shrink: 0; /* Evita que se aplasten si hay muchas */
+}
+
+.merchant-card .card-header {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* --- MINI CARGA DEL MERCADER --- */
+.cargo-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 5px;
+    padding-top: 5px;
+    border-top: 1px dashed #5a4030;
+}
+
+.cargo-item {
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    color: #e3cc9f;
+    border: 1px solid #5a4030;
+}
+
+.cargo-item img {
+    width: 14px;
+    height: 14px;
+    margin-right: 4px;
+    object-fit: contain;
+}
+
+/* Ajuste para que la tarjeta de Dispatch crezca si tiene mucha carga */
+.container-each-merchant {
+    height: auto !important; /* Sobrescribimos la altura fija */
+    min-height: 130px;
+    flex-direction: column; /* Cambiamos a columna para que quepa la carga abajo */
+    align-items: flex-start !important;
+    justify-content: center;
+}
+
+.container-each-merchant .data-merchant {
+    width: 100%;
+}
+
+/* GAME OVER STYLES */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); /* Fondo muy oscuro */
+    z-index: 9999; /* Por encima de todo */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+}
+
+.game-over-box {
+    background-color: #2a1a11;
+    border: 2px solid #8b0000; /* Borde rojo oscuro */
+    color: #e3cc9f;
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    width: 400px;
+    box-shadow: 0 0 30px rgba(139, 0, 0, 0.5);
+    animation: fadeIn 1s ease-in;
+}
+
+.game-over-title {
+    font-size: 2.5rem;
+    color: #ff4444;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-shadow: 2px 2px 0px black;
+}
+
+.reason-text {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #ccc;
+    font-style: italic;
+}
+
+.game-over-stats {
+    background-color: rgba(0,0,0,0.3);
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 25px;
+}
+
+.btn-restart {
+    background-color: #8b0000;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.btn-restart:hover {
+    background-color: #ff4444;
+    box-shadow: 0 0 15px #ff4444;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
 }
